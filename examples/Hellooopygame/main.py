@@ -1,25 +1,3 @@
-# OOPyGame
-
-Object oriented wrapper on pygame to simplify making UI for pygame applications.
-Supported layouts:
-- Absolute layout (default one)
-- Horizontal layout
-- Vertical layout
-
-Supported widgets:
-- Widget
-- Button
-- Label
-- ImageBox
-- Slider
-- List
-- MenuBar
-- Menu
-- Action
-
-To use the library, import the windowmanager and the needed widgets from PyGameUI
-
-```python
 from OOPyGame import WindowManager, Button, List, MenuBar, Menu, Action, MenuSeparator, HorizontalLayout, VerticalLayout, ImageBox, Slider
 import pygame
 # ===== Build pygame window and populate with widgets ===================
@@ -88,4 +66,3 @@ class MainWindow(WindowManager):
 if __name__=="__main__":
     mw = MainWindow()
     mw.loop()
-```
