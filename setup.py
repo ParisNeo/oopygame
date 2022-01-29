@@ -17,7 +17,7 @@ requirements_dev = read_requirements("requirements_dev.txt")
 
 setuptools.setup(
     name="OOPyGame",
-    version="0.0.1",
+    version="0.0.2",
     author="Saifeddine ALOUI",
     author_email="aloui.saifeddine@gmail.com",
     description="An object oriented python library for building user interfaces based on pygame",
