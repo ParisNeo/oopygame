@@ -1,4 +1,4 @@
-from OOPyGame import WindowManager, Button, List, MenuBar, Menu, Action, MenuSeparator, HorizontalLayout, VerticalLayout, ImageBox, Slider
+from OOPyGame import FormLayout, Label, TextBox, WindowManager, Button, List, MenuBar, Menu, Action, MenuSeparator, HorizontalLayout, VerticalLayout, ImageBox, Slider
 import pygame
 # ===== Build pygame window and populate with widgets ===================
 pygame.init()
@@ -16,6 +16,8 @@ class MainWindow(WindowManager):
 
         self.layout_1 = HorizontalLayout()
         self.layout_2 = VerticalLayout()
+        self.layout_3 = FormLayout(fixed_title_size=200)
+        
 
         # Build an image Box
         self.main_video = ImageBox()
@@ -28,7 +30,14 @@ class MainWindow(WindowManager):
 
         # Build a list of items
         self.test_ui1 = List(list=[f"item {i}" for i in range(100)])
-        self.test_ui3 = Button("Hello 3")
+        self.test_ui3 = Button("This is a button",rect=[0,0,100,20])
+        self.test_ui4 = Label("This is a label")
+        self.test_ui5 = TextBox("This is a textbox")
+
+        self.layout_3.addWidget(self.test_ui3,"Title")
+        self.layout_3.addWidget(self.test_ui4,"Title 2")
+        self.layout_3.addWidget(self.test_ui5,"Title 3")
+        
 
         self.layout_1.addWidget(self.test_ui1,0.2)
         self.layout_1.addWidget(self.layout_2,0.8)
@@ -36,7 +45,7 @@ class MainWindow(WindowManager):
         self.layout_2.addWidget(self.main_video,0.7)
         self.layout_2.addWidget(self.time_slider,0.05)
 
-        self.layout_2.addWidget(self.test_ui3,0.25)
+        self.layout_2.addWidget(self.layout_3,0.25)
 
         self.addWidget(self.layout_1)
 
